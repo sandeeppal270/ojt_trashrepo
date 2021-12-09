@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Company;
+use App\Http\Requests\JobPostRequest;
 
 class JobController extends Controller
 {
@@ -15,10 +16,14 @@ class JobController extends Controller
    public function show($id,Job $job){
     return view('jobs.show',compact('job'));
    }
+   public function company(){
+    return view('company.index');
+   }
+
    public function create(){
        return view('jobs.create');
    }
-   public function store(){
+   public function store(JobPostRequest $request){
        $user_id = auth()->user()->id;
        $company =  Company::where('user_id',$user_id)->first();
        $company_id =$company->id;
