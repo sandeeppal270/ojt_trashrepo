@@ -31,10 +31,10 @@
             </div>
             <div class="form-group">
             <label for="role">Roles:</label>
-            <textarea name="roles" class="form-control"></textarea>
-            @if($errors->has('title'))
+            <textarea name="roles" class="form-control  {{$errors->has('roles') ?'is-invalid' :''}}" value="{{old('roles')}}"></textarea>
+            @if($errors->has('roles'))
             <span class="invalid-feedback" role="alert">
-            <strong>{{ $errors->first('title') }}</strong>
+            <strong>{{ $errors->first('roles') }}</strong>
             </span>
          @endif
             </div>
@@ -48,11 +48,21 @@
             </div>
             <div class="form-group">
             <label for="position">Position:</label>
-            <input type="text" name="position" class="form-control">
+            <input type="text" name="position" class="form-control {{$errors->has('position') ?'is-invalid' :''}}" value="{{old('position')}}">
+            @if($errors->has('position'))
+            <span class="invalid-feedback" role="alert">
+            <strong>{{ $errors->first('position') }}</strong>
+            </span>
+         @endif
             </div>
             <div class="form-group">
             <label for="address">Address:</label>
-            <input type="text" name="address" class="form-control">
+            <input type="text" name="address" class="form-control {{$errors->has('address') ?'is-invalid' :''}}" value="{{old('address')}}">
+            @if($errors->has('address'))
+            <span class="invalid-feedback" role="alert">
+            <strong>{{ $errors->first('address') }}</strong>
+            </span>
+         @endif
 
             </div>
             <div class="form-group">
@@ -74,7 +84,12 @@
             </div>
             <div class="form-group">
             <label for="lastdate">Last date:</label>
-            <input type="date" name="last_date" class="form-control">
+            <input type="date" name="last_date" class="form-control {{$errors->has('last_date') ?'is-invalid' :''}}" value="{{old('last_date')}}">
+            @if($errors->has('last_date'))
+            <span class="invalid-feedback" role="alert">
+            <strong>{{ $errors->first('last_date') }}</strong>
+            </span>
+         @endif
             </div>
             <div class="form-group">
             <button type="submit" class="btn btn-dark">Submit</button>

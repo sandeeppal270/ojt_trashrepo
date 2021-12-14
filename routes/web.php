@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 */
 //jobs
 Route::get('/ ', [App\Http\Controllers\JobController::class, 'index']);
-Route::get('/jobs/create ', [App\Http\Controllers\JobController::class, 'create']);
+Route::get('/jobs/create ', [App\Http\Controllers\JobController::class, 'create'])->name('jobs.create');
 Route::post('/jobs/create ', [App\Http\Controllers\JobController::class, 'store'])->name('job.store');
 
 
