@@ -32,8 +32,8 @@ class CompanySeeder extends Seeder
         'address'=>$faker->address,
         'phone'=>$faker->phoneNumber,
         'website'=>$faker->domainName,
-        'logo'=>'man.jpg',
-        'cover_photo'=>'banner.jpg',
+        'logo'=>'avatar/man.jpg',
+        'cover_photo'=>'cover/background.jpg',
         'slogan'=>'learn-earn and grow',
         'description'=>$faker->paragraph(rand(2,10))
 

@@ -27,7 +27,7 @@ class CompanyController extends Controller
         ]);
         return redirect()->back()->with('message','Company Successfully Updated!');
     }
-    public function coverphoto(Request $request){
+    public function coverPhoto(Request $request){
         $user_id= auth()->user()->id;
         if($request->hasfile('cover_photo')){
             $file = $request->file('cover_photo');

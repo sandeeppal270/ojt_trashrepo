@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('/company/{id}/{company}', [App\Http\Controllers\CompanyController::c
 Route::get('company/create', [App\Http\Controllers\CompanyController::class, 'create'])->name('company.view');
 Route::post('company/create', [App\Http\Controllers\CompanyController::class, 'store'])->name('company.store');
 Route::post('company/coverphoto', [App\Http\Controllers\CompanyController::class, 'coverPhoto'])->name('cover.photo');
-Route::post('company/logo', [App\Http\Controllers\CompanyController::class, 'companylogo'])->name('company.logo');
+Route::post('company/logo', [App\Http\Controllers\CompanyController::class, 'companyLogo'])->name('company.logo');
 
 
 

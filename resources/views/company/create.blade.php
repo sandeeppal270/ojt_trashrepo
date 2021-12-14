@@ -90,10 +90,10 @@
                     <div class="card-body">
                         <input type="file" class="form-control" name="cover_photo"><br>
                         <button class="btn btn-dark float-right" type="submit">Update</button>
-                        @if($errors->has('cover_letter'))
+                        {{-- @if($errors->has('cover_letter'))
                         <div class="error" style="color:red">{{$errors->first('cover_letter')}}</div>
 
-                        @endif
+                        @endif --}}
                     </div>
             </div>
          </form>
