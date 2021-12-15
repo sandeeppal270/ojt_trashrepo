@@ -55,6 +55,9 @@
                                 </li>
                             @endif
                         @else
+                        <li>
+                            <a href="{{route('job.create')}}"><button class="btn btn-secondary">Post a job</button></a>
+                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 @if(Auth::user()->user_type='employer')
@@ -71,6 +74,7 @@
                                     
                                      {{ __('Company') }}
                                  </a>
+                                 <a class="dropdown-item" href="{{route('my.job')}}">Myjobs</a>
                                  @else
                                  <a class="dropdown-item" href="user/profile">
                                     

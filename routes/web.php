@@ -18,8 +18,11 @@ use Illuminate\Support\Facades\Auth;
 */
 //jobs
 Route::get('/ ', [App\Http\Controllers\JobController::class, 'index']);
-Route::get('/jobs/create ', [App\Http\Controllers\JobController::class, 'create'])->name('jobs.create');
+Route::get('/jobs/create ', [App\Http\Controllers\JobController::class, 'create'])->name('job.create');
 Route::post('/jobs/create ', [App\Http\Controllers\JobController::class, 'store'])->name('job.store');
+Route::get('/jobs/my-job ', [App\Http\Controllers\JobController::class, 'myjob'])->name('my.job');
+Route::get('/jobs/{id}/edit ', [App\Http\Controllers\JobController::class, 'edit'])->name('job.edit');
+Route::post('/jobs/{id}/edit ', [App\Http\Controllers\JobController::class, 'update'])->name('job.update');
 
 
 Auth::routes();
