@@ -9,6 +9,11 @@ use App\Http\Requests\JobPostRequest;
 
 class JobController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('employer',['except'=>array('index','show')]);
+    }
+
    public function index(){
        $jobs = Job::all()->take(10);
        return view('welcome',compact('jobs'));
@@ -60,6 +65,11 @@ class JobController extends Controller
 
     ]);
     return redirect()->back()->with('message','Job posted successfully!');
+}
+public function apply(Request $request,$id){
+        $jobId = Job::find($id);
+        // $jobId->
+
 }
 
 

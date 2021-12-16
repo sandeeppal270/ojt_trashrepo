@@ -7,6 +7,11 @@ use App\Models\Profile;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+     $this->middleware('seeker');  
+    }
+
     public function index(){
         return view('profile.index');
     }
