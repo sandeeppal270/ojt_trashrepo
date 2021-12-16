@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
             <label for="description">Description:</label>
-            <textarea name="description" class="form-control  {{$errors->has('description') ?'is-invalid' :''}}" value="{{old('description')}}"></textarea>
+            <textarea name="description" class="form-control  {{$errors->has('description') ?'is-invalid' :''}}">{{old('description')}}</textarea>
             @if($errors->has('description'))
             <span class="invalid-feedback" role="alert">
             <strong>{{ $errors->first('description') }}</strong>
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
             <label for="role">Roles:</label>
-            <textarea name="roles" class="form-control  {{$errors->has('roles') ?'is-invalid' :''}}" value="{{old('roles')}}"></textarea>
+            <textarea name="roles" class="form-control  {{$errors->has('roles') ?'is-invalid' :''}}">{{old('roles')}}</textarea>
             @if($errors->has('roles'))
             <span class="invalid-feedback" role="alert">
             <strong>{{ $errors->first('roles') }}</strong>
@@ -84,7 +84,7 @@
             </div>
             <div class="form-group">
             <label for="lastdate">Last date:</label>
-            <input type="date" name="last_date" class="form-control {{$errors->has('last_date') ?'is-invalid' :''}}" value="{{old('last_date')}}">
+            <input type="text" id="datepicker" name="last_date" class="form-control {{$errors->has('last_date') ?'is-invalid' :''}}" value="{{old('last_date')}}">
             @if($errors->has('last_date'))
             <span class="invalid-feedback" role="alert">
             <strong>{{ $errors->first('last_date') }}</strong>
