@@ -22,7 +22,7 @@ class Job extends Model
         return $this->belongsToMany(User::class)->withTimestamps();
     }
     public function checkApplication(){
-        DB::table('job_user')->where('user_id',auth()->user()->id)->where('job_id',$this->id)->exists();
+       return DB::table('job_user')->where('user_id',auth()->user()->id)->where('job_id',$this->id)->exists();
     }
 
 

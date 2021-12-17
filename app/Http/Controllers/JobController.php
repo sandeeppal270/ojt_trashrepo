@@ -41,6 +41,11 @@ class JobController extends Controller
 
     }
 
+    public function applicant(){
+        $applicants = Job::has('users')->where('user_id',auth()->user()->id)->get();
+        return view('jobs.applicants',compact('applicants'));
+    }
+
    public function create(){
        return view('jobs.create');
    }
