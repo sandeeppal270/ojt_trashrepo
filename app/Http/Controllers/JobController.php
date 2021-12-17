@@ -17,8 +17,9 @@ class JobController extends Controller
     }
 
    public function index(){
-       $jobs = Job::all()->take(10);
-       return view('welcome',compact('jobs'));
+       $jobs = Job::latest()->limit(10)->where('status',1)->get();
+       $companies = Company::limit(10)->get();
+       return view('welcome',compact('jobs','companies'));
    }
    public function show($id,Job $job){
     return view('jobs.show',compact('job'));
@@ -39,6 +40,11 @@ class JobController extends Controller
     $job->update($request->all());
     return redirect()->back()->with('message','Job Successfully Updated!');
 
+    }
+
+    public function applicant(){
+        $applicants = Job::has('users')->where('user_id',auth()->user()->id)->get();
+        return view('jobs.applicants',compact('applicants'));
     }
 
    public function create(){
